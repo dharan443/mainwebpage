@@ -3,12 +3,47 @@
 body { background:#0f0f0f; color:#fff; scroll-behavior:smooth; }
 
 /* NAVIGATION */
-nav { display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:#111; position:sticky; top:0; z-index:100;}
-nav .logo { font-weight:700; font-size:24px;}
-nav ul { list-style:none; display:flex;}
-nav ul li { margin-left:30px;}
-nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s;}
-nav ul li a:hover { color:#00ffd1; }
+/* NAVIGATION LINKS STYLE */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect: background & underline animation */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ffd1;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #00ffd1;
+  background: rgba(0, 255, 209, 0.1);
+}
+
+/* Active link highlight */
+nav ul li a.active {
+  color: #00ffd1;
+}
+
+nav ul li a.active::after {
+  width: 100%;
+}
+
 
 /* HERO */
 /* HERO SECTION */
