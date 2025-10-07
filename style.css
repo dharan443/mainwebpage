@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #f9f9f9;
-  color: #111;
+  background: #0f0f0f;
+  color: #fff;
   scroll-behavior: smooth;
 }
 
@@ -19,7 +19,6 @@ nav {
   align-items: center;
   padding: 20px 60px;
   background: #111;
-  color: #fff;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -47,18 +46,23 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #00bcd4;
+  color: #00ffd1;
 }
 
 /* HERO */
 #hero {
   height: 100vh;
-  background: linear-gradient(135deg,#00bcd4,#1e90ff);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 10;
 }
 
 #hero h1 {
@@ -73,8 +77,8 @@ nav ul li a:hover {
 
 #hero .btn {
   padding: 12px 30px;
-  background: #fff;
-  color: #1e90ff;
+  background: #00ffd1;
+  color: #111;
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
@@ -82,7 +86,25 @@ nav ul li a:hover {
 }
 
 #hero .btn:hover {
-  background: #e0f7fa;
+  background: #00bfa5;
+}
+
+/* Floating circles */
+.floating-bg span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 255, 209, 0.2);
+  animation: float 20s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+  left: calc(var(--i) * 5%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
 }
 
 /* SECTIONS */
@@ -94,6 +116,7 @@ nav ul li a:hover {
 .section h2 {
   font-size: 36px;
   margin-bottom: 50px;
+  color: #00ffd1;
 }
 
 /* SKILLS */
@@ -106,7 +129,7 @@ nav ul li a:hover {
 
 .skill {
   background: #111;
-  color: #fff;
+  color: #00ffd1;
   padding: 15px 20px;
   border-radius: 10px;
   font-weight: 600;
@@ -114,7 +137,8 @@ nav ul li a:hover {
 }
 
 .skill:hover {
-  background: #00bcd4;
+  background: #00ffd1;
+  color: #111;
   cursor: default;
 }
 
@@ -126,16 +150,24 @@ nav ul li a:hover {
 }
 
 .project-card {
-  background: #fff;
+  background: #111;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,255,209,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.6s ease-in-out;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0,255,209,0.5);
 }
 
 /* FOOTER */
