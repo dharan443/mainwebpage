@@ -71,6 +71,7 @@ nav ul li a:hover { color:#00ffd1; }
 .project-card.show { opacity:1; transform:translateY(0); transition:0.6s ease-in-out;}
 .project-card:hover { transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,255,209,0.5);}
 /* SKILLS SECTION */
+/* SKILLS GRID */
 .skills-intro {
   text-align: center;
   font-size: 18px;
@@ -81,18 +82,19 @@ nav ul li a:hover { color:#00ffd1; }
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 25px;
   justify-items: center;
   text-align: left;
 }
 
 .skill-category {
   background: #111;
-  padding: 25px;
+  padding: 20px 25px;
   border-radius: 12px;
   border-left: 4px solid #00ffd1;
   box-shadow: 0 8px 20px rgba(0,255,209,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
 }
 
 .skill-category:hover {
@@ -103,21 +105,24 @@ nav ul li a:hover { color:#00ffd1; }
 .skill-category h3 {
   color: #00ffd1;
   margin-bottom: 15px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .skill-item {
-  font-size: 18px;
+  font-size: 16px;
   color: #ddd;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.2s;
 }
 
 .skill-item:hover {
   color: #00ffd1;
+  cursor: default;
 }
+
 /* HERO PROFILE SECTION */
 .profile-section {
   display: flex;
