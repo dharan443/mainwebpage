@@ -122,16 +122,16 @@ nav ul li a:hover { color:#00ffd1; }
 .profile-section {
   display: flex;
   align-items: center;
-  justify-content: center; /* center the block instead of space-between */
-  gap: 60px; /* space between text and image */
-  padding: 40px 0;
-  flex-wrap: wrap; /* mobile responsive */
+  justify-content: center; /* center content horizontally */
+  gap: 60px;               /* space between text and photo */
+  padding: 40px 10%;
+  flex-wrap: wrap;          /* allows responsive stacking on small screens */
 }
 
 .profile-section .intro {
   flex: 1;
   min-width: 280px;
-  max-width: 500px;
+  max-width: 550px;       /* prevents text from being too wide */
   text-align: left;
 }
 
@@ -142,7 +142,7 @@ nav ul li a:hover { color:#00ffd1; }
 }
 
 .profile-section .intro h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: #fff;
@@ -150,29 +150,30 @@ nav ul li a:hover { color:#00ffd1; }
 
 .profile-section .intro h2 {
   font-size: 1.5rem;
-  color: #00ffd1; /* matches your theme accent */
+  color: #00ffd1; /* accent color */
   margin-bottom: 15px;
 }
 
 .profile-section .intro p {
   font-size: 1.1rem;
-  color: #ddd; /* visible on dark background */
+  color: #ddd;
   line-height: 1.7;
 }
 
-.profile-section img {
-  width: 240px; /* bigger photo */
-  height: 240px;
+.profile-section .profile-photo img {
+  width: 260px;  /* larger, prominent photo */
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 255, 209, 0.25); /* subtle glow */
+  box-shadow: 0 6px 18px rgba(0, 255, 209, 0.25);
   border: 3px solid #00ffd1;
   transition: transform 0.3s ease;
 }
 
-.profile-section img:hover {
+.profile-section .profile-photo img:hover {
   transform: scale(1.05);
 }
+
 
 /* FOOTER */
 footer { background:#111; color:#fff; padding:30px; text-align:center;}
