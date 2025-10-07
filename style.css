@@ -199,6 +199,10 @@ nav ul li a:hover { color:#00ffd1; }
   .skills-grid, .projects-grid, .certifications-grid { grid-template-columns:1fr; gap:25px; }
   .cert-card, .skill-category, .project-card { max-width:100%; padding:30px; }
 }
+.cert-card h3,
+.cert-card .issuer {
+  text-align: justify;
+}
 
 /* FOOTER */
 footer { background:#111; color:#fff; padding:30px; text-align:center; }
