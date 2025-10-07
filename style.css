@@ -137,12 +137,14 @@ nav ul li a:hover { color:#00ffd1; }
   font-size: 20px;
   color:#00ffd1;
   margin-bottom:10px;
+  text-align: justify;
 }
 
 .issuer {
   font-weight:600;
   margin-bottom:12px;
   color:#00bfa5; /* default issuer color, override per cert if needed */
+  text-align: justify;
 }
 
 .cert-desc {
