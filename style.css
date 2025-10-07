@@ -146,6 +146,10 @@ nav ul li a:hover { color:#00ffd1; }
   margin-bottom: 10px;
   font-weight: 600;
 }
+.cert-card .cert-icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
 
 
 .cert-card p {
