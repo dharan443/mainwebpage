@@ -129,6 +129,7 @@ nav ul li a:hover { color:#00ffd1; }
 /* CERTIFICATIONS */
 /* CERTIFICATIONS */
 /* CERTIFICATIONS */
+/* CERTIFICATIONS */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
