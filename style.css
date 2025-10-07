@@ -127,16 +127,16 @@ nav ul li a:hover { color:#00ffd1; }
 .profile-section {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* text left, photo right */
-  gap: 60px;                   /* more space between text and photo */
+  justify-content: flex-start;
+  gap: 60px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Keep for responsive, photo can move below on small screens */
 }
 
 .profile-section .intro {
-  flex: 0 0 55%;               /* text ~55% width */
+  flex: 0 0 55%;
   min-width: 300px;
   text-align: left;
 }
@@ -156,7 +156,7 @@ nav ul li a:hover { color:#00ffd1; }
 
 /* Profile Photo */
 .profile-section .profile-photo {
-  flex: 0 0 40%;               /* photo ~40% width */
+  flex: 0 0 40%;
   display: flex;
   justify-content: center;
 }
