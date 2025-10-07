@@ -127,6 +127,7 @@ nav ul li a:hover { color:#00ffd1; }
   .profile-section .profile-photo img { width:260px; height:260px; }
 }
 /* CERTIFICATIONS */
+/* CERTIFICATIONS */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -145,18 +146,31 @@ nav ul li a:hover { color:#00ffd1; }
   text-align: left;
   box-shadow: 0 8px 20px rgba(0, 255, 209, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cert-card h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: #00ffd1;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.cert-card p {
-  font-size: 16px;
-  color: #ddd;
-  line-height: 1.5;
+.verify-btn {
+  text-decoration: none;
+  color: #111;
+  background: #00ffd1;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.verify-btn:hover {
+  background: #00bfa5;
+  transform: translateY(-2px);
 }
 
 .cert-card:hover {
@@ -164,6 +178,7 @@ nav ul li a:hover { color:#00ffd1; }
   box-shadow: 0 12px 30px rgba(0, 255, 209, 0.35);
   cursor: default;
 }
+
 
 /* FOOTER */
 footer { background:#111; color:#fff; padding:30px; text-align:center; }
