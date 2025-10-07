@@ -11,12 +11,9 @@ nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s
 nav ul li a:hover { color:#00ffd1; }
 
 /* HERO */
-
-
 #hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* ensure profile photo & content stack vertically */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -30,99 +27,43 @@ nav ul li a:hover { color:#00ffd1; }
 }
 @keyframes float {0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(-1000px) rotate(720deg); opacity:0;}}
 
-/* PROFILE SECTION */
-/* Projects Section */
-.projects-intro {
-  text-align: center;
-  color: #aaa;
-  font-size: 18px;
-  max-width: 900px;
-  margin: 0 auto 50px auto;
-  line-height: 1.6;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@media (min-width: 960px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.project-card {
-  background: #1a1a1a;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,255,209,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+.profile-section {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 18px 35px rgba(0,255,209,0.35);
-}
-
-.project-image {
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-direction: row; /* text left, photo right */
+  max-width: 1200px;
   width: 100%;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s;
 }
 
-.project-card:hover .project-image {
+/* Responsive stacking on smaller screens */
+@media (max-width: 900px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+.profile-photo img {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 12px 25px rgba(0, 255, 209, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-photo img:hover {
   transform: scale(1.05);
+  box-shadow: 0 18px 35px rgba(0, 255, 209, 0.35);
 }
 
-.project-card h3 {
-  font-size: 22px;
-  color: #00ffd1;
-  margin: 15px;
+.intro {
+  max-width: 600px;
+  color: #fff;
 }
-
-.project-date {
-  font-size: 14px;
-  color: #00bfa5;
-  margin: 0 15px 10px 15px;
-}
-
-.project-desc {
-  font-size: 16px;
-  color: #ccc;
-  margin: 0 15px 10px 15px;
-  line-height: 1.6;
-}
-
-.project-tech {
-  font-size: 14px;
-  color: #ffb74d; /* Different color for skills */
-  font-weight: 600;
-  margin: 0 15px 15px 15px;
-  border-top: 1px solid #333;
-  padding-top: 8px;
-}
-
-/* RESPONSIVE */
-@media (max-width:900px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .project-card {
-    max-width: 100%;
-  }
-}
-
 
 /* ABOUT SECTION */
 .section { padding:80px 50px; text-align:center; }
@@ -171,9 +112,9 @@ nav ul li a:hover { color:#00ffd1; }
 /* CERTIFICATIONS GRID */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 per row */
-  gap: 30px 20px; /* row-gap 30px, column-gap 20px */
-  justify-items: stretch; /* fill column width */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 20px;
+  justify-items: stretch;
   margin-top: 40px;
 }
 
@@ -202,14 +143,8 @@ nav ul li a:hover { color:#00ffd1; }
 .issuer {
   font-weight:600;
   margin-bottom:12px;
-  color:#00bfa5; /* default issuer color, override per cert if needed */
+  color:#00bfa5;
   text-align: justify;
-}
-
-.cert-desc {
-  font-size:14px;
-  margin-bottom:15px;
-  color:#ccc;
 }
 
 .verify-btn {
@@ -220,7 +155,7 @@ nav ul li a:hover { color:#00ffd1; }
   text-align:center;
   transition: background 0.3s, transform 0.3s;
   align-self:start;
-  color:#111; /* will override with issuer color inline */
+  color:#111;
 }
 
 .cert-card:hover {
@@ -247,7 +182,6 @@ nav ul li a:hover { color:#00ffd1; }
   margin: 0 auto;
 }
 
-/* Limit to 3 per row on large screens */
 @media (min-width: 960px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -314,7 +248,6 @@ nav ul li a:hover { color:#00ffd1; }
   box-shadow: 0 18px 35px rgba(0,255,209,0.35);
 }
 
-/* RESPONSIVE */
 @media (max-width:900px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -325,9 +258,6 @@ nav ul li a:hover { color:#00ffd1; }
   }
 }
 
-
-
-/* CONTACT SECTION */
 /* CONTACT SECTION */
 .contact-intro {
   text-align: center;
@@ -410,7 +340,6 @@ nav ul li a:hover { color:#00ffd1; }
   position: relative;
 }
 
-/* RESPONSIVE */
 @media (max-width:900px) {
   .contact-content {
     grid-template-columns: 1fr;
