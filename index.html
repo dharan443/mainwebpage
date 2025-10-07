@@ -4,141 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dharaneesh Kuppusamy | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* RESET & BASE */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body { background:#0f0f0f; color:#fff; scroll-behavior:smooth; }
-
-/* NAV */
-nav { display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:#111; position:sticky; top:0; z-index:100;}
-nav .logo { font-weight:700; font-size:24px;}
-nav ul { list-style:none; display:flex;}
-nav ul li { margin-left:30px;}
-nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s;}
-nav ul li a:hover { color:#00ffd1; }
-
-/* HERO */
-#hero {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  padding:40px 20px;
-}
-
-.floating-bg span {
-  position:absolute; display:block; width:20px; height:20px; background: rgba(0, 255, 209,0.2); border-radius:50%;
-  animation: float 20s linear infinite; bottom:-150px; left: calc(var(--i)*5%);
-}
-@keyframes float {0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(-1000px) rotate(720deg); opacity:0;}}
-
-/* PROFILE SECTION */
-.profile-section {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:60px;
-  max-width:1200px;
-  width:100%;
-  flex-wrap:wrap;
-}
-
-.profile-section .intro {
-  flex:1 1 550px;
-  text-align:left;
-}
-
-.profile-section .intro h3 { font-size:1.5rem; color:#00ffd1; margin-bottom:10px; }
-.profile-section .intro h1 { font-size:3rem; margin-bottom:10px; }
-.profile-section .intro h2 { font-size:1.6rem; margin-bottom:20px; font-weight:400; color:#ccc; }
-.profile-section .intro p { font-size:1.15rem; line-height:1.7; color:#ddd; }
-
-/* Profile Photo */
-.profile-section .profile-photo {
-  flex:0 0 350px;
-  display:flex;
-  justify-content:center;
-}
-.profile-section .profile-photo img {
-  width:350px;
-  height:350px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #00ffd1;
-  box-shadow:0 8px 20px rgba(0,255,209,0.3);
-  transition: transform 0.3s ease;
-}
-.profile-section .profile-photo img:hover { transform:scale(1.05); }
-
-/* ABOUT SECTION */
-.section { padding:80px 50px; text-align:center; }
-.section h2 { font-size:36px; margin-bottom:50px; color:#00ffd1; }
-
-.about-content {
-  max-width:900px;
-  margin:0 auto;
-  text-align:left;
-  line-height:1.8;
-  font-size:18px;
-  color:#ddd;
-  padding:20px;
-  background: rgba(0, 255, 209,0.05);
-  border-left:4px solid #00ffd1;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,255,209,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.about-content:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,255,209,0.2); }
-
-/* SKILLS */
-.skills-intro { text-align:center; font-size:18px; color:#ccc; margin-bottom:40px; }
-
-.skills-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:25px;
-  justify-items:center;
-}
-
-.skill-category {
-  background:#111;
-  padding:20px 25px;
-  border-radius:12px;
-  border-left:4px solid #00ffd1;
-  box-shadow:0 8px 20px rgba(0,255,209,0.1);
-  width:100%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.skill-category:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,255,209,0.2); }
-.skill-category h3 { color:#00ffd1; margin-bottom:15px; font-size:20px; }
-.skill-item { font-size:16px; color:#ddd; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-.skill-item:hover { color:#00ffd1; cursor:default; }
-
-/* CERTIFICATIONS */
-.certifications-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; justify-items:center; }
-.cert-card { background:#111; color:#00ffd1; padding:20px; border-radius:12px; font-weight:600; box-shadow:0 5px 15px rgba(0,255,209,0.2); transition:0.3s; }
-.cert-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,255,209,0.4); }
-
-/* PROJECTS */
-.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
-.project-card { background:#111; padding:25px; border-radius:12px; box-shadow:0 8px 20px rgba(0,255,209,0.2); transition:transform 0.3s,box-shadow 0.3s; opacity:0; transform:translateY(50px);}
-.project-card.show { opacity:1; transform:translateY(0); transition:0.6s ease-in-out;}
-.project-card:hover { transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,255,209,0.5); }
-
-/* RESPONSIVE */
-@media (max-width:900px) {
-  .profile-section { flex-direction:column; align-items:center; text-align:center; }
-  .profile-section .intro, .profile-section .profile-photo { flex:1 1 100%; max-width:100%; }
-  .profile-section .profile-photo { margin-top:20px; }
-  .profile-section .profile-photo img { width:260px; height:260px; }
-}
-
-/* FOOTER */
-footer { background:#111; color:#fff; padding:30px; text-align:center; }
-</style>
 </head>
 <body>
 
@@ -163,39 +30,106 @@ footer { background:#111; color:#fff; padding:30px; text-align:center; }
     <span style="--i:12;"></span>
     <span style="--i:24;"></span>
   </div>
+  <div class="hero-content">
+    <div class="profile-section">
 
-  <div class="profile-section">
-    <div class="intro">
-      <h3>Hello, I'm</h3>
-      <h1>Dharaneesh Kuppusamy Ganesan</h1>
-      <h2>Network & Security Engineer</h2>
-      <p>Designing and securing enterprise networks through Cisco-based infrastructure, VPNs, and cloud-connected systems — combining reliability, performance, and cybersecurity best practices.</p>
-    </div>
-    <div class="profile-photo">
-      <img src="https://raw.githubusercontent.com/dharan443/mainwebpage/main/Screenshot%202025-08-25%20173305.png" alt="Dharaneesh Kuppusamy Ganesan">
+      <!-- Text content -->
+      <div class="intro">
+        <h3>Hello, I'm</h3>
+        <h1>Dharaneesh Kuppusamy Ganesan</h1>
+        <h2>Network & Security Engineer</h2>
+        <p>Designing and securing enterprise networks through Cisco-based infrastructure, VPNs, and cloud-connected systems — combining reliability, performance, and cybersecurity best practices.</p>
+      </div>
+
+      <!-- Profile photo -->
+      <div class="profile-photo">
+        <img src="https://raw.githubusercontent.com/dharan443/mainwebpage/main/Screenshot%202025-08-25%20173305.png" alt="Dharaneesh Kuppusamy Ganesan">
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+
+
+
 <section id="about" class="section">
   <h2>About Me</h2>
   <div class="about-content">
     <p>💡 Tech enthusiast with a knack for uncovering hidden challenges and solving problems.</p>
+
     <p>💼 I hold certifications in <strong>Cisco CCNA</strong>, <strong>AWS Solutions Architect – Associate (SAA-C03)</strong>, and <strong>Fortinet Cybersecurity</strong>, giving me a strong foundation in networking, cloud, and security.</p>
-    <p>🚀 I’ve explored projects from AI-powered document processing to IoT honeypots—and even discovered a real-world VoIP vulnerability in a major telecom.</p>
-    <p>💻 I enjoy experimenting with networking setups, cloud deployments, and Python scripting to see how things work in practice.</p>
+
+    <p>🚀 I’ve explored projects from AI-powered document processing to IoT honeypots—and even discovered a real-world VoIP vulnerability in a major telecom, proving curiosity pays off.</p>
+
+    <p>💻 I enjoy experimenting with networking setups, cloud deployments, and Python scripting to see how things work in practice… sometimes creating bugs just to make my code feel alive.</p>
+
+    <p>🏋️ I keep a strict gym routine and take solo walks 🚶‍♂️—usually imagining I’m in a movie montage 🎬 (minus the camera crew and soundtrack).</p>
   </div>
 </section>
+
 
 <!-- SKILLS -->
 <section id="skills" class="section">
   <h2>Networking & Security Expertise</h2>
-  <p class="skills-intro">Skilled in designing, deploying, and securing enterprise-grade network infrastructure with strong expertise in Cisco systems, cloud networking, and cybersecurity best practices.</p>
+  <p class="skills-intro">
+    Skilled in designing, deploying, and securing enterprise-grade network infrastructure with strong expertise in Cisco systems, cloud networking, and cybersecurity best practices.
+  </p>
+
   <div class="skills-grid">
-    <!-- Add skill categories here like in your previous code -->
+
+    <!-- Core Networking -->
+    <div class="skill-category">
+      <h3>Core Networking</h3>
+      <div class="skill-item">🌐 Cisco CCNA Certified – Routing, Switching & Subnetting</div>
+      <div class="skill-item">🔌 Cisco IOS & Nexus OS Administration</div>
+      <div class="skill-item">🧩 VLAN, STP, OSPF, EIGRP, and BGP Configuration</div>
+      <div class="skill-item">📶 Cisco Meraki SD-WAN & Wireless Networks</div>
+      <div class="skill-item">⚙️ Capacity Planning & Network Performance Monitoring</div>
+    </div>
+
+    <!-- Security & Access Control -->
+    <div class="skill-category">
+      <h3>Security & Access Control</h3>
+      <div class="skill-item">🛡️ VPN Configuration (IPSec, SSL, Site-to-Site, Remote Access)</div>
+      <div class="skill-item">🔐 Cisco Firewall & Security Appliance Management</div>
+      <div class="skill-item">🧱 Network Security Policies & Role-Based Access Control (Cisco ISE)</div>
+      <div class="skill-item">🧠 Endpoint Security & Threat Mitigation</div>
+      <div class="skill-item">🚨 Incident Detection, Analysis & Response</div>
+    </div>
+
+    <!-- Unified Communications & VoIP -->
+    <div class="skill-category">
+      <h3>Unified Communications & VoIP</h3>
+      <div class="skill-item">📞 Cisco UCM & VoIP Configuration</div>
+      <div class="skill-item">🔍 SIP, RTP, and QoS Troubleshooting</div>
+      <div class="skill-item">📡 Secure VoIP Deployment & Monitoring</div>
+      <div class="skill-item">🧩 Vulnerability Testing & Security Hardening</div>
+    </div>
+
+    <!-- Cloud & Virtualization -->
+    <div class="skill-category">
+      <h3>Cloud & Virtualization</h3>
+      <div class="skill-item">☁️ AWS & Azure Cloud Networking (VPCs, Route Tables, Security Groups)</div>
+      <div class="skill-item">💻 Virtualization Platforms (VMware & Hyper-V)</div>
+      <div class="skill-item">🚀 Cloud-based Network Integration & Automation</div>
+      <div class="skill-item">🔧 Hybrid Connectivity & Secure Remote Access Solutions</div>
+    </div>
+
+    <!-- Professional & Technical Competencies -->
+    <div class="skill-category">
+      <h3>Professional Competencies</h3>
+      <div class="skill-item">🧠 Strong Analytical & Troubleshooting Skills</div>
+      <div class="skill-item">💬 Clear Communication with Technical & Non-Technical Teams</div>
+      <div class="skill-item">🕒 Reliable Under Pressure with On-Call Readiness</div>
+      <div class="skill-item">🤝 Team Collaboration & Independent Execution</div>
+      <div class="skill-item">📈 Continuous Learning in Security & Cloud Innovation</div>
+    </div>
+
   </div>
 </section>
+
+
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="section">
@@ -219,6 +153,18 @@ footer { background:#111; color:#fff; padding:30px; text-align:center; }
       <h3>Melune Cloud Deployment</h3>
       <p>Dockerized frontend & backend deployed on AWS ECS with Fargate.</p>
     </div>
+    <div class="project-card">
+      <h3>IoT Honeypots</h3>
+      <p>Deployed honeypots on Kubernetes clusters for threat analysis.</p>
+    </div>
+    <div class="project-card">
+      <h3>AI Document Processing</h3>
+      <p>BERT & BART pipelines for legal document analysis & retrieval.</p>
+    </div>
+    <div class="project-card">
+      <h3>Healthcare Monitoring System</h3>
+      <p>Centralized monitoring of vital signs & emergency alerts via PLC & SCADA.</p>
+    </div>
   </div>
 </section>
 
@@ -232,5 +178,7 @@ footer { background:#111; color:#fff; padding:30px; text-align:center; }
 <footer>
   <p>&copy; 2025 Dharaneesh Kuppusamy</p>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
