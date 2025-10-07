@@ -140,6 +140,19 @@ nav ul li a:hover { color:#00ffd1; }
   color: #00ffd1;
   margin-bottom: 10px;
 }
+.cert-card .issuer {
+  font-size: 14px;
+  color: #00bfa5;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.cert-card p {
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
 .verify-btn {
   text-decoration: none;
