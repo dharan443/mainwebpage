@@ -196,32 +196,56 @@
 
 
 
-<!-- PROJECTS -->
+<!-- PROJECTS SECTION -->
 <section id="projects" class="section">
-  <h2>Projects</h2>
+  <h2>My Projects</h2>
+  <p class="projects-intro">Here are some of the cybersecurity projects I've worked on. Each project demonstrates my expertise in different areas of information security.</p>
+
+  <!-- Project Filters -->
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tools">Security Tools</button>
+    <button class="filter-btn" data-filter="pentest">Penetration Testing</button>
+    <button class="filter-btn" data-filter="monitoring">Monitoring & Analysis</button>
+  </div>
+
   <div class="projects-grid">
-    <div class="project-card">
-      <h3>VoIP Security Vulnerability</h3>
-      <p>Discovered a real-world VoIP security flaw in BSNL FTTH.</p>
+
+    <div class="project-card tools">
+      <img src="images/wireshark.png" alt="Wireshark Project">
+      <h3>Network Traffic Analysis Tool</h3>
+      <p>Developed a custom network traffic analysis tool using Wireshark and Python to detect anomalies and suspicious activity.</p>
+      <div class="project-tech">Skills: Wireshark, Python, Network Security</div>
+      <a href="#" class="project-btn">View Code</a>
     </div>
-    <div class="project-card">
-      <h3>Melune Cloud Deployment</h3>
-      <p>Dockerized frontend & backend deployed on AWS ECS with Fargate.</p>
+
+    <div class="project-card pentest">
+      <img src="images/voip.png" alt="VoIP Project">
+      <h3>VoIP Security Penetration Testing</h3>
+      <p>Tested and documented security vulnerabilities in BSNL FTTH VoIP systems, recommending mitigations for secure VoIP operations.</p>
+      <div class="project-tech">Skills: SIP, VPN, Security Testing</div>
+      <a href="#" class="project-btn">Read More</a>
     </div>
-    <div class="project-card">
-      <h3>IoT Honeypots</h3>
-      <p>Deployed honeypots on Kubernetes clusters for threat analysis.</p>
+
+    <div class="project-card monitoring">
+      <img src="images/iot-honeypot.png" alt="IoT Honeypots">
+      <h3>IoT Honeypots for Threat Analysis</h3>
+      <p>Deployed Kubernetes-based IoT honeypots to monitor and analyze cyberattacks in real-time.</p>
+      <div class="project-tech">Skills: Kubernetes, IoT, Elasticsearch, Kibana</div>
+      <a href="#" class="project-btn">View Demo</a>
     </div>
-    <div class="project-card">
-      <h3>AI Document Processing</h3>
-      <p>BERT & BART pipelines for legal document analysis & retrieval.</p>
+
+    <div class="project-card monitoring">
+      <img src="images/healthcare.png" alt="Healthcare Monitoring">
+      <h3>Healthcare Monitoring & Emergency Response</h3>
+      <p>Designed SCADA & PLC systems for real-time vital monitoring with automated emergency alerts using ML.</p>
+      <div class="project-tech">Skills: SCADA, PLC, XGBoost, Python</div>
+      <a href="#" class="project-btn">View Demo</a>
     </div>
-    <div class="project-card">
-      <h3>Healthcare Monitoring System</h3>
-      <p>Centralized monitoring of vital signs & emergency alerts via PLC & SCADA.</p>
-    </div>
+
   </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact" class="section">
