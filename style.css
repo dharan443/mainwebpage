@@ -11,14 +11,17 @@ nav ul li a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s
 nav ul li a:hover { color:#00ffd1; }
 
 /* HERO */
+
+
 #hero {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  padding:40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* ensure profile photo & content stack vertically */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
 }
 
 .floating-bg span {
