@@ -204,5 +204,68 @@ nav ul li a:hover { color:#00ffd1; }
   text-align: justify;
 }
 
+/* CONTACT SECTION */
+.contact-intro {
+  text-align: center;
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-box {
+  background: #111;
+  border-left: 5px solid #00ffd1;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 255, 209, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #00ffd1;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-box a {
+  color: #00ffd1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-box a:hover {
+  color: #00bfa5;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0, 255, 209, 0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 /* FOOTER */
 footer { background:#111; color:#fff; padding:30px; text-align:center; }
