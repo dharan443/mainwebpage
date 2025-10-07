@@ -28,42 +28,98 @@ nav ul li a:hover { color:#00ffd1; }
 @keyframes float {0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(-1000px) rotate(720deg); opacity:0;}}
 
 /* PROFILE SECTION */
-.profile-section {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:60px;
-  max-width:1200px;
-  width:100%;
-  flex-wrap:wrap;
+/* Projects Section */
+.projects-intro {
+  text-align: center;
+  color: #aaa;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
 }
 
-.profile-section .intro {
-  flex:1 1 550px;
-  text-align:left;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.profile-section .intro h3 { font-size:1.5rem; color:#00ffd1; margin-bottom:10px; }
-.profile-section .intro h1 { font-size:3rem; margin-bottom:10px; }
-.profile-section .intro h2 { font-size:1.6rem; margin-bottom:20px; font-weight:400; color:#ccc; }
-.profile-section .intro p { font-size:1.15rem; line-height:1.7; color:#ddd; }
+@media (min-width: 960px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-/* Profile Photo */
-.profile-section .profile-photo {
-  flex:0 0 350px;
-  display:flex;
-  justify-content:center;
+.project-card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,255,209,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
 }
-.profile-section .profile-photo img {
-  width:350px;
-  height:350px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #00ffd1;
-  box-shadow:0 8px 20px rgba(0,255,209,0.3);
-  transition: transform 0.3s ease;
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 35px rgba(0,255,209,0.35);
 }
-.profile-section .profile-photo img:hover { transform:scale(1.05); }
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  font-size: 22px;
+  color: #00ffd1;
+  margin: 15px;
+}
+
+.project-date {
+  font-size: 14px;
+  color: #00bfa5;
+  margin: 0 15px 10px 15px;
+}
+
+.project-desc {
+  font-size: 16px;
+  color: #ccc;
+  margin: 0 15px 10px 15px;
+  line-height: 1.6;
+}
+
+.project-tech {
+  font-size: 14px;
+  color: #ffb74d; /* Different color for skills */
+  font-weight: 600;
+  margin: 0 15px 15px 15px;
+  border-top: 1px solid #333;
+  padding-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .project-card {
+    max-width: 100%;
+  }
+}
+
 
 /* ABOUT SECTION */
 .section { padding:80px 50px; text-align:center; }
