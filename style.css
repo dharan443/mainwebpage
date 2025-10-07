@@ -109,21 +109,13 @@ nav ul li a:hover { color:#00ffd1; }
 .skill-item { font-size:16px; color:#ddd; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
 .skill-item:hover { color:#00ffd1; cursor:default; }
 
-/* CERTIFICATIONS */
 /* CERTIFICATIONS GRID */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 per row */
-  gap: 35px;
-  justify-items: center;
+  gap: 30px 20px; /* row-gap 30px, column-gap 20px */
+  justify-items: stretch; /* fill column width */
   margin-top: 40px;
-}
-
-/* Make responsive: 1 per row on small screens */
-@media (max-width:900px) {
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Certification Card */
@@ -133,7 +125,6 @@ nav ul li a:hover { color:#00ffd1; }
   padding: 35px 25px;
   border-radius: 15px;
   width: 100%;
-  max-width: 350px;
   text-align: left;
   box-shadow: 0 12px 25px rgba(0, 255, 209, 0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -144,24 +135,31 @@ nav ul li a:hover { color:#00ffd1; }
 
 .cert-card h3 {
   font-size: 20px;
-  color: #00ffd1;
-  margin-bottom: 10px;
+  color:#00ffd1;
+  margin-bottom:10px;
 }
 
 .issuer {
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-weight:600;
+  margin-bottom:12px;
+  color:#00bfa5; /* default issuer color, override per cert if needed */
+}
+
+.cert-desc {
+  font-size:14px;
+  margin-bottom:15px;
+  color:#ccc;
 }
 
 .verify-btn {
-  text-decoration: none;
+  text-decoration:none;
   padding: 12px 22px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-align: center;
+  border-radius:8px;
+  font-weight:700;
+  text-align:center;
   transition: background 0.3s, transform 0.3s;
-  align-self: start;
-  color: #111; /* text color */
+  align-self:start;
+  color:#111; /* will override with issuer color inline */
 }
 
 .cert-card:hover {
