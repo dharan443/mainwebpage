@@ -22,6 +22,34 @@ nav ul li a:hover { color:#00ffd1; }
 /* Floating circles */
 .floating-bg span { position:absolute; display:block; width:20px; height:20px; background: rgba(0, 255, 209,0.2); animation: float 20s linear infinite; bottom:-150px; border-radius:50%; left: calc(var(--i)*5%);}
 @keyframes float {0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(-1000px) rotate(720deg); opacity:0;}}
+/* ABOUT SECTION STYLING */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #ddd;
+  padding: 20px;
+  background: rgba(0, 255, 209, 0.05); /* subtle highlight */
+  border-left: 4px solid #00ffd1;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,255,209,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+}
+
+.about-content p strong {
+  color: #00ffd1;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,255,209,0.2);
+}
 
 /* SECTIONS */
 .section { padding:80px 50px; text-align:center;}
