@@ -118,20 +118,21 @@ nav ul li a:hover { color:#00ffd1; }
 .skill-item:hover {
   color: #00ffd1;
 }
-
+/* HERO PROFILE SECTION */
 .profile-section {
   display: flex;
   align-items: center;
-  justify-content: center; /* center content horizontally */
-  gap: 60px;               /* space between text and photo */
-  padding: 40px 10%;
-  flex-wrap: wrap;          /* allows responsive stacking on small screens */
+  justify-content: flex-start; /* tightly aligns text to photo */
+  gap: 40px;                   /* small gap between text and image */
+  max-width: 1000px;           /* limits hero section width */
+  margin: 0 auto;              /* center horizontally */
+  padding: 60px 20px;
+  flex-wrap: wrap;             /* responsive stacking on small screens */
 }
 
 .profile-section .intro {
-  flex: 1;
-  min-width: 280px;
-  max-width: 550px;       /* prevents text from being too wide */
+  flex: 0 0 60%;               /* text takes ~60% width */
+  min-width: 300px;
   text-align: left;
 }
 
@@ -144,13 +145,13 @@ nav ul li a:hover { color:#00ffd1; }
 .profile-section .intro h1 {
   font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #fff;
 }
 
 .profile-section .intro h2 {
-  font-size: 1.5rem;
-  color: #00ffd1; /* accent color */
+  font-size: 1.4rem;
+  color: #00ffd1; /* accent */
   margin-bottom: 15px;
 }
 
@@ -160,19 +161,43 @@ nav ul li a:hover { color:#00ffd1; }
   line-height: 1.7;
 }
 
+/* Profile Photo */
+.profile-section .profile-photo {
+  flex: 0 0 35%;               /* photo takes ~35% width */
+  display: flex;
+  justify-content: center;
+}
+
 .profile-section .profile-photo img {
-  width: 260px;  /* larger, prominent photo */
+  width: 260px;
   height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 255, 209, 0.25);
   border: 3px solid #00ffd1;
+  box-shadow: 0 6px 18px rgba(0, 255, 209, 0.25);
   transition: transform 0.3s ease;
 }
 
 .profile-section .profile-photo img:hover {
   transform: scale(1.05);
 }
+
+/* RESPONSIVE ADJUSTMENT */
+@media (max-width: 900px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-section .intro {
+    flex: 1 1 100%;
+  }
+  .profile-section .profile-photo {
+    flex: 1 1 100%;
+    margin-top: 20px;
+  }
+}
+
 
 
 /* FOOTER */
